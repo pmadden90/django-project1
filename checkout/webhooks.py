@@ -23,7 +23,7 @@ def webhook(request):
     # import pdb; pdb.set_trace()
     try:
         event = stripe.Webhook.construct_event(
-        payload, sig_header, wh_secret
+            payload, sig_header, wh_secret
         )
     except ValueError as e: # noqa
         # Invalid payload
